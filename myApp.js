@@ -11,6 +11,7 @@ const middleware = (req, res, next) => {
 };
 //caling the middleware when ever the app get /now
 app.get("/now", middleware, (req, res) => {
+    console.log(req.method + " " + req.path + " - " + req.ip)
     res.send({ time: req.time });
 });
 
