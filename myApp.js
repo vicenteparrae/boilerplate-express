@@ -14,19 +14,19 @@ let app = express();
 // Assets at the /public route
 //app.use("/public", express.static(__dirname + "/public"));
 
-//Excercises - Serve JSON on a Specific Route & Use the .env File
-//let response = "Hello json";
-//app.get('/json', (req, res) => {
-//
-//    var mySecret = process.env['MESSAGE_STYLE'];
-//
-//    if (mySecret === "uppercase") {
-//        res.json({ "message": response.toUpperCase() });
-//    } else {
-//        res.json({ "message": response });
-//    }
-//
-//});
+let response = "Hello json";
+
+app.get('/json', (req, res) => {
+
+    var mySecret = process.env['MESSAGE_STYLE'];
+
+    if (mySecret === "uppercase") {
+        res.json({ "message": response.toUpperCase() });
+    } else {
+        res.json({ "message": response });
+    }
+
+});
 
 
 
