@@ -12,7 +12,7 @@ console.log("Hello World");
 // Assets at the /public route
 //app.use("/public", express.static(__dirname + "/public"));
 
-app.get("/json", (req, res) { res.json({ message: "Hello json" }) });
+app.get("/json", (req, res) => { res.json({ message: "Hello json" }) });
 
 
 
