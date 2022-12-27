@@ -2,8 +2,9 @@ let express = require('express');
 let app = express();
 console.log("Hello World");
 
-//Displaying the index.html
-//app.get("/", function (req, res) {res.sendFile(__dirname + "/view/index.html")});
+
+//app.get("/", function (req, res) {res.sendFile(__dirname + "/views/index.html")});
+
 
 // Normal usage
 //app.use(express.static(__dirname + "/public"));
