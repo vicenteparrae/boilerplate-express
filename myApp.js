@@ -2,10 +2,24 @@
 let express = require('express');
 let app = express();
 
-app.use((req, res, next) => {
-    console.log(req.method + " " + req.path + " - " + req.ip)
+
+//Excercises - Chain Middleware to Create a Time Server
+
+const middleware = (req, res, next) => {
+    req.time = new Date().toString();
     next();
-})
+};
+
+app.get("/now", middleware, (req, res) => {
+    res.send({ time: req.time });
+});
+
+
+//Excercises - Implement a Root-Level Request Logger Middleware
+//app.use((req, res, next) => {
+//    console.log(req.method + " " + req.path + " - " + req.ip)
+//    next();
+//})
 
 //Excercises - Meet the Node console
 //console.log("Hello World");
