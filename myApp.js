@@ -10,14 +10,19 @@ let app = express();
 // Assets at the /public route
 //app.use("/public", express.static(__dirname + "/public"));
 
-if (process.env.MESSAGE_STYLE === "uppercase") {
-    var myMessage = "Hello json".toUpperCase();
-} else {
-    var myMessage = "Hello json";
-}
+let response = "Hello json";
 
-app.get("/json", (req, res) => { res.json({ message: myMessage }) });
+app.get('/json', (req, res) => {
 
+    var mySecret = process.env['MESSAGE_STYLE'];
+
+    if (mySecret === "uppercase") {
+        res.json({ "message": response.toUpperCase() });
+    } else {
+        res.json({ "message": response });
+    }
+
+});
 
 
 
