@@ -4,12 +4,12 @@ let app = express();
 
 
 //Excercises - Chain Middleware to Create a Time Server
-
+//Building the middleware
 const middleware = (req, res, next) => {
     req.time = new Date().toString();
     next();
 };
-
+//caling the middleware when ever the app get /now
 app.get("/now", middleware, (req, res) => {
     res.send({ time: req.time });
 });
