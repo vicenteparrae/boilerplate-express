@@ -10,9 +10,10 @@ const middleware = (req, res, next) => {
     next();
 };
 //caling the middleware when ever the app get /now
-app.get("/now", middleware, (req, res) => {
-    console.log(req.method + " " + req.path + " - " + req.ip)
-    res.send({ time: req.time });
+app.get("/:word/echo", middleware, (req, res) => {
+    const { word } = req.params;
+    console.log(req.method + " " + req.path + " - " + req.ip + word)
+    res.json({ echo: word });
 });
 
 
