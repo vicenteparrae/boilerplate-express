@@ -3,7 +3,7 @@ let express = require('express');
 let app = express();
 
 
-//Excercises - Chain Middleware to Create a Time Server
+//Excercises - Chain Middleware to Create a Time Server & Get Route Parameter Input from the Client
 //Building the middleware
 const middleware = (req, res, next) => {
     req.time = new Date().toString();
