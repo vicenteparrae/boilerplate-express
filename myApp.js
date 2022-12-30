@@ -1,16 +1,22 @@
 //require('dotenv').config();
 let express = require('express');
 let app = express();
+const bodyParser = require('body-parser');
+
+// Excercises - Use body-parser to Parse POST Requests
+app.use(bodyParser.urlencoded({ extended: false }));
+app.use(bodyParser.json());
+
 
 
 //Excercises - Chain Middleware to Create a Time Server & Get Route Parameter Input from the Client
 //Building the middleware
-const middleware = (req, res, next) => {
-    req.time = new Date().toString();
-    //Loging the wholw request
-    //console.log(req)
-    next();
-};
+//const middleware = (req, res, next) => {
+//    req.time = new Date().toString();
+//    bodyParser.urlencoded({ extended: false })
+//    next();
+//};
+
 //caling the middleware when ever the app get /now
 //app.get("/:word/echo", middleware, (req, res) => {
 //    const { word } = req.params;
@@ -19,13 +25,12 @@ const middleware = (req, res, next) => {
 //});
 
 //Excercises - Get Query Parameter Input from the Client
-
-app.get("/name", middleware, (req, res) => {
-    var firstName = req.query.first;
-    var lastName = req.query.last;
-    console.log(req.method + " " + req.path + " - " + req.ip + " - " + JSON.stringify(req.query))
-    res.json({ name: firstName + " " + lastName });
-});
+//app.get("/name", middleware, (req, res) => {
+//    var firstName = req.query.first;
+//    var lastName = req.query.last;
+//    console.log(req.method + " " + req.path + " - " + req.ip + " - " + JSON.stringify(req.query))
+//    res.json({ name: firstName + " " + lastName });
+//});
 
 //Excercises - Implement a Root-Level Request Logger Middleware
 //app.use((req, res, next) => {
