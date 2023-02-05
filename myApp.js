@@ -17,7 +17,6 @@ app.post("/name", function (req, res) {
     // Handle the data in the request
     var firstName = req.body.first;
     var lastName = req.body.last;
-    console.log(req.method + " " + req.path + " - " + req.ip + " - " + JSON.stringify(req.query))
     res.json({ name: firstName + " " + lastName });
 });
 
