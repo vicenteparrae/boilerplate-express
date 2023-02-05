@@ -10,21 +10,16 @@ var bodyParser = require('body-parser');
 
 //Exercises Get Data from POST Requests
 //Building the middleware
-    const middleware = (req, res, next) => {
-        req.time = new Date().toString();
-        bodyParser.urlencoded({ extended: false })
-        next();
-    };
 
 
 
-    app.post("/name", middleware, (req, res) => {
-        // Handle the data in the request
-        var firstName = req.query.first;
-        var lastName = req.query.last;
-        console.log(req.method + " " + req.path + " - " + req.ip + " - " + JSON.stringify(req.query))
-        res.json({ name: firstName + " " + lastName });
-    });
+app.post("/name", function (req, res) {
+    // Handle the data in the request
+    var firstName = req.body.first;
+    var lastName = req.body.last;
+    console.log(req.method + " " + req.path + " - " + req.ip + " - " + JSON.stringify(req.query))
+    res.json({ name: firstName + " " + lastName });
+});
 
 
 //app.get("/name", middleware, (req, res) => {
