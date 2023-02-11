@@ -3,15 +3,8 @@ let express = require('express');
 let app = express();
 var bodyParser = require('body-parser');
 
-// Exercises - Use body-parser to Parse POST Requests
-//  app.use(bodyParser.urlencoded({ extended: false }));
-//  console.log(app)
-//  app.use(bodyParser.json());
-
 //Exercises Get Data from POST Requests
 //Building the middleware
-
-
 
 app.post("/name", function (req, res) {
     // Handle the data in the request
@@ -22,6 +15,12 @@ app.post("/name", function (req, res) {
     res.json({ name: string });
 });
 
+
+
+// Exercises - Use body-parser to Parse POST Requests
+//  app.use(bodyParser.urlencoded({ extended: false }));
+//  console.log(app)
+//  app.use(bodyParser.json());
 
 //app.get("/name", middleware, (req, res) => {
 //    var firstName = req.query.first;
