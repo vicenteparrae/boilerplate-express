@@ -12,6 +12,7 @@ app.use(bodyParser.json());
 const middleware = (req, res, next) => {
     req.time = new Date().toString();
     bodyParser.urlencoded({ extended: false })
+    console.log(req.time)
     next();
 };
 
