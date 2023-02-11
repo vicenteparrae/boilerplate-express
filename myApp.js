@@ -6,7 +6,6 @@ var bodyParser = require('body-parser');
 //Exercises Get Data from POST Requests
 //Building the middleware
 app.use(bodyParser.urlencoded({ extended: false }));
-console.log(app)
 app.use(bodyParser.json());
 
 
